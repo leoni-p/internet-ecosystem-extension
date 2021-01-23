@@ -4,10 +4,10 @@ import { locationStringToLongitudeLatitude, getBrowserLongitudeLatitude, getMile
 import { milesToCarbon } from './carbon.js';
 import { getRating } from './rating';
 
-export const getUrlsFromPage = (document) => {
-  return [
-    'https://???'
-  ];
+export const addRating = (document) => {
+  const locationString = getLocationStringFromUrl(window.location.href);
+  const div = getHtmlFromLocationString(locationString);
+  document.getElementById("itemTitle").innerHTML = document.getElementById("itemTitle").innerHTML + div;
 }
 
 export const getLocationStringFromUrl = async (url) => {
